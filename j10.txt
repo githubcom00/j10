@@ -1,0 +1,33 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Chess extends JPanel {
+
+   public void paint(Graphics g) {
+        int row;
+        int col;
+        int x;
+        int y;
+        for (row = 0; row < 8; row++) {
+            for (col = 0; col < 8; col++) {
+                x = row * 20;
+                y = col * 20;
+                if ((row % 2 == 0) == (col % 2 == 0))
+                    g.setColor(Color.BLACK);
+                else
+                    g.setColor(Color.RED);
+                g.fillRect(x, y, 20, 20);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        
+            JFrame frame = new JFrame("Chess");
+            Chess chess = new Chess();
+            frame.add(chess);
+            frame.setSize(600, 600);
+            frame.setVisible(true);
+       
+    }
+}
